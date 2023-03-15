@@ -16,7 +16,7 @@ Generate the headings for the sections of a blog post for the following title: H
 Generate the headings for the sections of a blog post for the following title: {topic}
 1."""
 
-_SECTION_GENERATION_PROMPT = """Blog title: Generate the headings for the sections of a blog post for the following title: Staying Productive While Working from Home.:
+_SECTION_GENERATION_PROMPT = """Blog title: Staying Productive While Working from Home.:
 Section title: Making a Schedule and Sticking to It:
 <|startoftext|>
 Working from home can be a great way to increase productivity and eliminate the distractions of a traditional office. However, it can also be easy to fall into the trap of procrastination and disorganization. One of the best ways to stay on track when working from home is to make a schedule and stick to it.
