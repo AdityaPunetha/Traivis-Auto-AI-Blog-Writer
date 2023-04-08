@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from pydantic import BaseModel
 from pexels import get_pexels_image
 
 from model import Generator
@@ -6,6 +7,10 @@ import json
 
 
 app = FastAPI()
+
+class req_body(BaseModel):
+    title:str
+    sections:list
 
 
 @app.get("/")
@@ -26,8 +31,11 @@ def create_sections(prompt):
     return sections
 
 
-@app.get("/api/create_blog")
-def create_blog(title, sections):
+@app.post("/api/create_blog")
+def create_blog(payload: req_body ):
+
+    title = payload.title
+    sections = list(payload.sections)
     images = get_pexels_image(title, amount=len(sections))
     output = []
     image_count = 0
